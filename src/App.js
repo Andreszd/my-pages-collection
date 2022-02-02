@@ -1,10 +1,19 @@
-import UserHeader from './components/UserHeader';
+import { Routes, Route } from 'react-router-dom';
+
+import DashBoard from './pages/DashBoard';
+import MyList from './pages/MyList';
+import Favorities from './pages/Favorities';
+import Groups from './pages/Groups';
 
 function App() {
   return (
-    <div className="mx-auto px-20 bg-slate-100 h-screen">
-      <UserHeader />
-    </div>
+    <Routes>
+      <Route path="/" element={<DashBoard />}>
+        <Route path="my-list" element={<MyList />} />
+        <Route path="favorities" element={<Favorities />} />
+        <Route path="groups" element={<Groups />} />
+      </Route>
+    </Routes>
   );
 }
 export default App;

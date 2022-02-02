@@ -25,7 +25,7 @@ export default function UserSettings() {
         <ul className="absolute right-0 bottom-0 w-40 py-3 border-solid border-gray-300 shadow-lg border translate-y-full rounded">
           {links.map((link, idx) => (
             <li
-              className="mb-2 py-2 mx-2 text-gray-700 hover:bg-slate-200 hover:cursor-pointer hover:text-black  text-sm"
+              className="mb-2 py-2 mx-2 text-gray-700 hover:bg-blue-100 hover:cursor-pointer hover:text-black  text-sm"
               key={idx}>
               <a href="#" className="px-1">
                 {link}
