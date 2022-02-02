@@ -1,3 +1,5 @@
 export default function MyList() {
-  return <div>My list</div>;
+  return <main>
+    <h1>My List</h1>
+    </main>;
 }

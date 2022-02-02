@@ -1,7 +1,7 @@
 export const LINKS = [
   {
     path: 'my-list',
-    name: 'My list',
+    name: 'My List',
     icon: 'list',
   },
   {
