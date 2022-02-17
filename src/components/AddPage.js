@@ -8,7 +8,6 @@ export default function AddPage() {
 
   const handleKeyDown = (evt) => {
     if (evt.key === 'Enter' && isValidUrl(evt.target.value)) {
-      console.log('save page..');
       addPage(evt.target.value);
       evt.target.value = '';
     }
