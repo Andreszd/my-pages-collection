@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import DashBoard from './pages/DashBoard';
 import MyList from './pages/MyList';
-import Favorities from './pages/Favorities';
+import Favorites from './pages/Favorites';
 import Groups from './pages/Groups';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <Routes>
       <Route path="/" element={<DashBoard />}>
         <Route path="my-list" element={<MyList />} />
-        <Route path="favorities" element={<Favorities />} />
+        <Route path="favorites" element={<Favorites />} />
         <Route path="groups" element={<Groups />} />
       </Route>
     </Routes>

@@ -25,6 +25,11 @@ export default function PageProvider({ children }) {
     ]);
   };
 
+  const filterBy = (attr, value) => {
+    if (attr !== 'checked' && attr !== 'isFav') return;
+    return pages.filter((page) => page[attr] === value);
+  };
+
   const changeStatus = (id, attr) => {
     if (attr !== 'checked' && attr !== 'isFav') return;
 
@@ -40,7 +45,8 @@ export default function PageProvider({ children }) {
     setPages(updatePages);
   };
   return (
-    <PageContext.Provider value={{ addPage, pages, changeStatus, removePage }}>
+    <PageContext.Provider
+      value={{ addPage, pages, changeStatus, removePage, filterBy }}>
       {children}
     </PageContext.Provider>
   );

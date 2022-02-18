@@ -1,3 +1,9 @@
+import MainLayout from '../components/MainLayout';
+
 export default function Groups() {
-  return <div>Groups</div>;
+  return (
+    <main>
+      <MainLayout title="Groups"></MainLayout>
+    </main>
+  );
 }

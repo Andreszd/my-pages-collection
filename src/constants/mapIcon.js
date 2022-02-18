@@ -5,6 +5,7 @@ import { ReactComponent as ClipBoard } from '../assets/icons/clipboard.svg';
 import { ReactComponent as Pinned } from '../assets/icons/pinned.svg';
 import { ReactComponent as Trash } from '../assets/icons/trash.svg';
 import { ReactComponent as Check } from '../assets/icons/check.svg';
+import { ReactComponent as Search } from '../assets/icons/search.svg';
 
 export const libIcons = {
   list: List,
@@ -14,6 +15,7 @@ export const libIcons = {
   pinned: Pinned,
   check: Check,
   trash: Trash,
+  search: Search,
 };
 
 export const mapIcon = (type) => libIcons[type];

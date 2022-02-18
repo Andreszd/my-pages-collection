@@ -5,8 +5,8 @@ export const LINKS = [
     icon: 'list',
   },
   {
-    path: 'favorities',
-    name: 'Favorities',
+    path: 'favorites',
+    name: 'Favorites',
     icon: 'favorite',
   },
   {

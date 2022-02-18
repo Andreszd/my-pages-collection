@@ -2,9 +2,8 @@ import { useState } from 'react';
 
 import { ReactComponent as ArrowDownIcon } from '../assets/icons/arrow-down.svg';
 
-import ProfileMenu from './ProfileMenu'
+import ProfileMenu from './ProfileMenu';
 import defaultIcon from '../assets/img/logo.jpg';
-
 
 export default function UserSettings() {
   const [isShowing, setShow] = useState(false);
@@ -22,9 +21,7 @@ export default function UserSettings() {
         <span>Andres</span>
         <ArrowDownIcon className="h-2 w-2" />
       </div>
-      {isShowing && (
-        <ProfileMenu/>
-      )}
+      {isShowing && <ProfileMenu switchDropDown={handleDropDown} />}
     </div>
   );
 }
