@@ -8,7 +8,7 @@ import { ReactComponent as Check } from '../assets/icons/check.svg';
 
 export const libIcons = {
   list: List,
-  favorities: Favorities,
+  favorite: Favorities,
   group: Groups,
   'clip-board': ClipBoard,
   pinned: Pinned,

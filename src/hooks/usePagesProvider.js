@@ -2,7 +2,10 @@ import { useContext } from 'react';
 import { PageContext } from '../context/PageContext';
 
 export default function usePagesProvider() {
-  const { pages, addPage } = useContext(PageContext);
+  const pagesContext = useContext(PageContext);
 
-  return { pages, addPage };
+  if (pagesContext === undefined)
+    throw new Error('usePages must be used whitin PageProvider');
+
+  return pagesContext;
 }

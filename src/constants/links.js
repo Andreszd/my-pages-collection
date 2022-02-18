@@ -7,7 +7,7 @@ export const LINKS = [
   {
     path: 'favorities',
     name: 'Favorities',
-    icon: 'favorities',
+    icon: 'favorite',
   },
   {
     path: 'groups',

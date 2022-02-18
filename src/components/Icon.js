@@ -11,7 +11,6 @@ export default function Icon({
   textTooltip,
 }) {
   const [isFocus, setFocus] = useState(false);
-
   const Svg = mapIcon(type);
 
   if (hasTooltip) {
@@ -27,5 +26,9 @@ export default function Icon({
       </div>
     );
   }
-  return <Svg className={className} onClick={onClick} />;
+  return (
+    <>
+      <Svg className={className} onClick={onClick} />{' '}
+    </>
+  );
 }

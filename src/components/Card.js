@@ -21,7 +21,7 @@ export default function card({ page }) {
         </figcaption>
       </figure>
       <footer>
-        <ActionsCard />
+        <ActionsCard pageInfo={page} />
       </footer>
     </div>
   );
