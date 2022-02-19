@@ -15,3 +15,18 @@ export const LINKS = [
     icon: 'group',
   },
 ];
+
+export const userLinks = [
+  {
+    path: 'my-list',
+  },
+  {
+    path: 'favorites',
+  },
+  {
+    path: 'groups',
+  },
+  {
+    path: 'settings',
+  },
+];

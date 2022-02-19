@@ -5,6 +5,7 @@ import SignInSignOut from './pages/SignInSignOut';
 import MyList from './pages/MyList';
 import Favorites from './pages/Favorites';
 import Groups from './pages/Groups';
+import Settings from './pages/Settings';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route index path="my-list" element={<MyList />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="groups" element={<Groups />} />
+        <Route path="account" element={<Settings />} />
       </Route>
     </Routes>
   );

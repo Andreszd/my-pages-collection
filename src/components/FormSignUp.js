@@ -61,7 +61,7 @@ export default function FormSignUp({ switchForm }) {
           </main>
           <footer className="border-t border-solid border-slate-200 px-5 pt-5">
             <p className="text-sm font-normal">
-              Already have an account?
+              Already have an account?{' '}
               <span
                 onClick={() => switchForm()}
                 className="text-blue-600 cursor-pointer hover:border-b border-solid border-blue-600">
