@@ -7,7 +7,7 @@ export default function FormSignIn({ switchForm }) {
   };
   return (
     <Form
-      className="py-5 w-96 bg-white rounded-lg shadow-lg"
+      className="py-5 w-full sm:w-96 bg-white rounded-lg shadow-lg"
       initialValues={{ email: '', password: '' }}
       onSubmit={(values) => {
         console.log(values);

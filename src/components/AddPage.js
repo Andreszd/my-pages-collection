@@ -17,8 +17,8 @@ export default function AddPage() {
 
   //FIXME tootltip
   return (
-    <div className="w-full px-4">
-      <div className="relative mx-auto block rounded-lg  shadow border-solid border-slate-200 w-3/5  overflow-hidden z-10">
+    <div className="w-full mb:px-4">
+      <div className="relative mx-auto block rounded-lg  shadow border-solid border-slate-200 md:w-3/5  overflow-hidden z-10">
         <input
           type="text"
           className="w-full pr-12 pl-6 py-3 placeholder:text-slate-400 placeholder:font-medium focus:outline-none"

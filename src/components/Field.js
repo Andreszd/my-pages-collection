@@ -15,6 +15,7 @@ export default function Field({
   };
 
   const handleFocus = (e) => {
+    if (!validate) return;
     const error = validate(e.target.value);
     if (error) {
       addError(e.target.name, error);

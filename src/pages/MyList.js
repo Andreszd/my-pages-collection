@@ -8,7 +8,7 @@ export default function MyList() {
   return (
     <main>
       <AddPage />
-      <MainLayout title="MyList">
+      <MainLayout title="My List">
         {pages?.map((page, idx) => (
           <Card page={page} key={idx} />
         ))}

@@ -2,7 +2,7 @@ import Icon from './Icon';
 
 export default function PrincipalSearch() {
   return (
-    <div className="relative  rounded-lg w-80 overflow-hidden shadow">
+    <div className="hidden sm:relative  sm:block rounded-lg w-80 overflow-hidden shadow">
       <input
         type="text"
         placeholder="Search"

@@ -18,7 +18,7 @@ export default function UserSettings() {
         <figure className="overflow-hidden rounded-full">
           <img src={defaultIcon} className="h-8 w-8" />
         </figure>
-        <span>Andres</span>
+        <span className="hidden md:block">Andres</span>
         <ArrowDownIcon className="h-2 w-2" />
       </div>
       {isShowing && <ProfileMenu switchDropDown={handleDropDown} />}

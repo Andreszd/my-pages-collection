@@ -6,7 +6,7 @@ import Icon from '../components/Icon';
 
 export default function UserSidebar() {
   return (
-    <aside>
+    <aside className="overflow-hidden">
       <section>
         <h2 className="text-slate-600 font-medium text-lg tracking-wider mb-4">
           Menu

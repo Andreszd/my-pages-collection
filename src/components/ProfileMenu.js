@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function ProfileMenu({ switchDropDown }) {
   return (
     <ul
-      className="absolute right-0 bottom-0 w-40 py-3 border-solid border-gray-300 shadow-lg border translate-y-full rounded"
+      className="absolute right-0 z-20 bottom-0 w-40 py-3 border-solid border-gray-300 shadow-lg border translate-y-full rounded"
       onMouseLeave={() => switchDropDown()}>
       <li className="">
         <Link

@@ -9,12 +9,12 @@ export default function Settings() {
           <h2 className="text-4xl font-bold mb-5">Account</h2>
           <p className="text-slate-600 text-md">Update your profile</p>
         </section>
-        <section className="w-3/4 bg-white p-5 border border-solid border-slate-300 rounded shadow">
+        <section className="sm:w-3/4 bg-white p-5 border border-solid border-slate-300 rounded ">
           <h2 className="text-2xl font-bold mb-3">Email</h2>
           <FormUpdateEmail />
         </section>
 
-        <section className="w-3/4 bg-white p-5 border border-solid border-slate-300 rounded shadow">
+        <section className="sm:w-3/4 bg-white p-5 border border-solid border-slate-300 rounded ">
           <h2 className="text-2xl font-bold mb-3">Change Password</h2>
           <FormUpdatePassword />
         </section>
