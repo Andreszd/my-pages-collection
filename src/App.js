@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 
+import PrivateRoute from './routes/PrivateRoute';
+import AuthProvider from './provider/AuthProvider';
+
 import DashBoard from './pages/DashBoard';
 import SignInSignOut from './pages/SignInSignOut';
 import MyList from './pages/MyList';
@@ -9,15 +12,19 @@ import Settings from './pages/Settings';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/auth" element={<SignInSignOut />} />
-      <Route path="/" element={<DashBoard />}>
-        <Route index path="my-list" element={<MyList />} />
-        <Route path="favorites" element={<Favorites />} />
-        <Route path="groups" element={<Groups />} />
-        <Route path="account" element={<Settings />} />
-      </Route>
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route path="/auth" element={<SignInSignOut />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/" element={<DashBoard />}>
+            <Route index path="my-list" element={<MyList />} />
+            <Route path="favorites" element={<Favorites />} />
+            <Route path="groups" element={<Groups />} />
+            <Route path="account" element={<Settings />} />
+          </Route>
+        </Route>
+      </Routes>
+    </AuthProvider>
   );
 }
 export default App;

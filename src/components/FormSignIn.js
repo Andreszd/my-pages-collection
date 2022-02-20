@@ -1,16 +1,26 @@
+import { useNavigate } from 'react-router-dom';
+
 import Form from './Form';
 import Field from './Field';
 
+import useAuth from '../hooks/useAuth';
+
 export default function FormSignIn({ switchForm }) {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const validate = (value) => {
     if (value?.trim().length === 0) return 'field must be complete';
   };
+
   return (
     <Form
       className="py-5 w-full sm:w-96 bg-white rounded-lg shadow-lg"
       initialValues={{ email: '', password: '' }}
       onSubmit={(values) => {
         console.log(values);
+        login();
+        navigate('/my-list');
       }}>
       {(errors) => (
         <>

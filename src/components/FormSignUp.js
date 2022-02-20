@@ -11,6 +11,7 @@ export default function FormSignUp({ switchForm }) {
       initialValues={{ fullName: '', email: '', password: '' }}
       onSubmit={(values) => {
         console.log(values);
+        switchForm();
       }}>
       {(errors) => (
         <>
