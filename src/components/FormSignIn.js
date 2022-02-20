@@ -3,22 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import Form from './Form';
 import Field from './Field';
 
+import { emailValidation, basicValidation } from '../helpers/fieldsValidation';
+
 import useAuth from '../hooks/useAuth';
 
 export default function FormSignIn({ switchForm }) {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const validate = (value) => {
-    if (value?.trim().length === 0) return 'field must be complete';
-  };
-
   return (
     <Form
       className="py-5 w-full sm:w-96 bg-white rounded-lg shadow-lg"
       initialValues={{ email: '', password: '' }}
       onSubmit={(values) => {
-        console.log(values);
         login();
         navigate('/my-list');
       }}>
@@ -36,7 +33,7 @@ export default function FormSignIn({ switchForm }) {
                 className={`border border-solid ${
                   errors?.email ? 'border-red-500' : 'border-slate-300'
                 } rounded py-2 px-3 w-full  outline-1 focus:outline-blue-500`}
-                validate={validate}
+                validate={emailValidation}
                 placeholder="Email"
               />
               <span className="text-xs text-red-500">{errors?.email}</span>
@@ -48,7 +45,7 @@ export default function FormSignIn({ switchForm }) {
                 className={`border border-solid ${
                   errors?.password ? 'border-red-500' : 'border-slate-300'
                 } rounded py-2 px-3 w-full outline-1 focus:outline-blue-500`}
-                validate={validate}
+                validate={basicValidation}
                 placeholder="Password"
               />
               <span className="text-xs text-red-500">{errors?.password}</span>

@@ -7,7 +7,7 @@ import FormSignUp from '../components/FormSignUp';
 import useAuth from '../hooks/useAuth';
 
 export default function SignInSignOut() {
-  const [currentForm, setCurrentForm] = useState(false);
+  const [currentForm, setCurrentForm] = useState(true);
   const { isAuthenticate } = useAuth();
 
   const switchForm = () => setCurrentForm(!currentForm);
