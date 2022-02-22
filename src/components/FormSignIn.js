@@ -11,14 +11,16 @@ export default function FormSignIn({ switchForm }) {
   const { login } = useAuth();
   const navigate = useNavigate();
 
+  const handleSubmit = async (user) => {
+    const res = await login(user);
+    if (res.status === 200) navigate('/my-list');
+  };
+
   return (
     <Form
       className="py-5 w-full sm:w-96 bg-white rounded-lg shadow-lg"
       initialValues={{ email: '', password: '' }}
-      onSubmit={(values) => {
-        login();
-        navigate('/my-list');
-      }}>
+      onSubmit={handleSubmit}>
       {(errors) => (
         <>
           <header className="text-center">
