@@ -1,12 +1,5 @@
-import axios from 'axios';
+import { api } from './headers';
 
-const baseUrl =
-  process.env.NODE === 'develop'
-    ? process.env.REACT_APP_LOCAL_BACKEND_URL
-    : process.env.REACT_APP_BACKEND_URL;
+export const sigin = (body = {}) => api.post(`auth/signIn`, body);
 
-export const sigin = (body = {}) =>
-  axios.post(`${baseUrl}/api/auth/signIn`, body);
-
-export const signup = async (body = {}) =>
-  axios.post(`${baseUrl}/api/auth/signUp`, body);
+export const signup = async (body = {}) => api.post(`auth/signUp`, body);
