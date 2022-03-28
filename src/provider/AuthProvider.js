@@ -10,35 +10,11 @@ export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!isAuthenticate && token) {
-      const id = localStorage.getItem('idUser');
-      authenticate(id, token);
+    const user = JSON.parse(window.localStorage.getItem('user'));
+    if (!isAuthenticate && user && user.token) {
+      authenticate(user.id, user.token);
     }
   }, []);
-
-  const login = async (user) => {
-    try {
-      const response = await sigin(user);
-
-      const { id, token } = response.data;
-
-      localStorage.setItem('token', token);
-      localStorage.setItem('idUser', id);
-
-      await authenticate(id, token);
-      toast.success('Welcome');
-
-      return response;
-    } catch ({ response }) {
-      toast.error(response?.data.error.message);
-      return response;
-    }
-  };
-
-  const logout = async () => {
-    setAuthenticate(!isAuthenticate);
-  };
 
   const authenticate = async (id, token) => {
     try {
@@ -48,6 +24,35 @@ export default function AuthProvider({ children }) {
     } catch ({ response }) {
       console.error(response);
     }
+  };
+
+  const login = async (body) => {
+    try {
+      const response = await sigin(body);
+
+      const user = response.data;
+
+      const { id, token } = user;
+
+      window.localStorage.setItem('user', JSON.stringify(user));
+
+      await authenticate(id, token);
+
+      toast.success('Welcome');
+
+      return response;
+    } catch ({ response }) {
+      toast.error(response?.data.error.message);
+      return response;
+    }
+  };
+
+  const setProfile = (urlImg) => {
+    setUser({ ...user, urlImg });
+  };
+
+  const logout = async () => {
+    setAuthenticate(!isAuthenticate);
   };
 
   const register = async (user) => {
@@ -62,7 +67,15 @@ export default function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticate, login, logout, register, authenticate }}>
+      value={{
+        user,
+        isAuthenticate,
+        login,
+        logout,
+        register,
+        authenticate,
+        setProfile,
+      }}>
       {children}
     </AuthContext.Provider>
   );
