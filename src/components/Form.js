@@ -7,12 +7,13 @@ export default function Form({ initialValues, className, onSubmit, children }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (errors !== null && checkFields()) {
+    if (checkFields()) {
       onSubmit(values);
     }
   };
 
   const checkFields = () => {
+    if (!errors) return true;
     const values = Object.values(errors);
     return values.every((value) => value === null);
   };
