@@ -31,7 +31,7 @@ export default function useProfileImage(filename = null) {
       const { data, status } = await setProfileImage(userId, formData);
       toast.success('user profile changed successfully');
 
-      if (status === 200) return data?.data?.urlImg;
+      if (status === 200) return data?.data?.filename;
     } catch (error) {
       let message;
       if (error instanceof TypeError) {
